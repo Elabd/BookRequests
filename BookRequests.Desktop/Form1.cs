@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookRequests.Desktop.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,13 @@ namespace BookRequests.Desktop
         public Form1()
         {
             InitializeComponent();
+            using (var ctx = new BookContext())
+            {
+                var stud = new Student() { StudentName = "Bill" , PhoneNumber="01093133933" };
+
+                ctx.Students.Add(stud);
+                ctx.SaveChanges();
+            }
         }
     }
 }
