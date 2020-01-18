@@ -5,6 +5,8 @@
         public int Id { get; set; }
         public string BookName { get; set; }
         public int NumberOfPage { get; set; }
+        public string Language { get; set; }
+
 
     }
 }

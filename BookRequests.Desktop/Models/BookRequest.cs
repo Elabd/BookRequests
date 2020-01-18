@@ -9,7 +9,6 @@ namespace BookRequests.Desktop.Models
         public Student Student { get; set; }
         public Book Book { get; set; }
         public RequestType RequestType { get; set; }
-        public string Language { get; set; }
         public string Note { get; set; }
         public Priority Priority { get; set; }
         public DateTime? RequestDate { get; set; }
