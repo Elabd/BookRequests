@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,7 +44,10 @@
             this.stimateDate = new System.Windows.Forms.DateTimePicker();
             this.arrivedDate = new System.Windows.Forms.DateTimePicker();
             this.Student = new System.Windows.Forms.ComboBox();
+            this.bookDBDataSet = new BookRequests.Desktop.BookDBDataSet();
             this.Book = new System.Windows.Forms.ComboBox();
+            this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bookDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.requestType = new System.Windows.Forms.ComboBox();
             this.priorty = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -51,6 +55,15 @@
             this.Status = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.booksTableAdapter = new BookRequests.Desktop.BookDBDataSetTableAdapters.BooksTableAdapter();
+            this.bookDBDataSet2 = new BookRequests.Desktop.BookDBDataSet2();
+            this.studentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentsTableAdapter = new BookRequests.Desktop.BookDBDataSet2TableAdapters.StudentsTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.bookDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookDBDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookDBDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -92,7 +105,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(336, 153);
+            this.label5.Location = new System.Drawing.Point(332, 147);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 13);
             this.label5.TabIndex = 6;
@@ -101,7 +114,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(326, 191);
+            this.label6.Location = new System.Drawing.Point(336, 191);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(68, 13);
             this.label6.TabIndex = 7;
@@ -110,7 +123,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(326, 224);
+            this.label7.Location = new System.Drawing.Point(336, 223);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(68, 13);
             this.label7.TabIndex = 8;
@@ -119,7 +132,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(328, 264);
+            this.label8.Location = new System.Drawing.Point(340, 257);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(66, 13);
             this.label8.TabIndex = 9;
@@ -129,7 +142,7 @@
             // 
             this.Note.Location = new System.Drawing.Point(434, 12);
             this.Note.Name = "Note";
-            this.Note.Size = new System.Drawing.Size(100, 20);
+            this.Note.Size = new System.Drawing.Size(260, 20);
             this.Note.TabIndex = 0;
             // 
             // requestdate
@@ -169,20 +182,40 @@
             // 
             // Student
             // 
+            this.Student.DataSource = this.studentsBindingSource;
+            this.Student.DisplayMember = "StudentName";
             this.Student.FormattingEnabled = true;
             this.Student.Location = new System.Drawing.Point(434, 38);
             this.Student.Name = "Student";
             this.Student.Size = new System.Drawing.Size(121, 21);
             this.Student.TabIndex = 16;
-            this.Student.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.Student.ValueMember = "Id";
+            // 
+            // bookDBDataSet
+            // 
+            this.bookDBDataSet.DataSetName = "BookDBDataSet";
+            this.bookDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // Book
             // 
+            this.Book.DataSource = this.booksBindingSource;
+            this.Book.DisplayMember = "BookName";
             this.Book.FormattingEnabled = true;
             this.Book.Location = new System.Drawing.Point(434, 65);
             this.Book.Name = "Book";
             this.Book.Size = new System.Drawing.Size(121, 21);
             this.Book.TabIndex = 17;
+            this.Book.ValueMember = "Id";
+            // 
+            // booksBindingSource
+            // 
+            this.booksBindingSource.DataMember = "Books";
+            this.booksBindingSource.DataSource = this.bookDBDataSetBindingSource;
+            // 
+            // bookDBDataSetBindingSource
+            // 
+            this.bookDBDataSetBindingSource.DataSource = this.bookDBDataSet;
+            this.bookDBDataSetBindingSource.Position = 0;
             // 
             // requestType
             // 
@@ -203,7 +236,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(325, 291);
+            this.label9.Location = new System.Drawing.Point(332, 283);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(74, 13);
             this.label9.TabIndex = 20;
@@ -212,7 +245,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(325, 318);
+            this.label10.Location = new System.Drawing.Point(361, 310);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(38, 13);
             this.label10.TabIndex = 21;
@@ -229,7 +262,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(331, 351);
+            this.label11.Location = new System.Drawing.Point(362, 343);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(37, 13);
             this.label11.TabIndex = 23;
@@ -244,6 +277,24 @@
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // booksTableAdapter
+            // 
+            this.booksTableAdapter.ClearBeforeFill = true;
+            // 
+            // bookDBDataSet2
+            // 
+            this.bookDBDataSet2.DataSetName = "BookDBDataSet2";
+            this.bookDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // studentsBindingSource
+            // 
+            this.studentsBindingSource.DataMember = "Students";
+            this.studentsBindingSource.DataSource = this.bookDBDataSet2;
+            // 
+            // studentsTableAdapter
+            // 
+            this.studentsTableAdapter.ClearBeforeFill = true;
             // 
             // AddBookRequest
             // 
@@ -276,6 +327,11 @@
             this.Name = "AddBookRequest";
             this.Text = "AddBookRequest";
             this.Load += new System.EventHandler(this.AddBookRequest_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bookDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookDBDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookDBDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -305,5 +361,12 @@
         private System.Windows.Forms.ComboBox Status;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.BindingSource bookDBDataSetBindingSource;
+        private BookDBDataSet bookDBDataSet;
+        private System.Windows.Forms.BindingSource booksBindingSource;
+        private BookDBDataSetTableAdapters.BooksTableAdapter booksTableAdapter;
+        private BookDBDataSet2 bookDBDataSet2;
+        private System.Windows.Forms.BindingSource studentsBindingSource;
+        private BookDBDataSet2TableAdapters.StudentsTableAdapter studentsTableAdapter;
     }
 }

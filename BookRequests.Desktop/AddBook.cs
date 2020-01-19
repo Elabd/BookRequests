@@ -27,6 +27,8 @@ namespace BookRequests.Desktop
 
         private void AddBook_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'bookDBDataSet.Books' table. You can move, or remove it, as needed.
+            this.booksTableAdapter.Fill(this.bookDBDataSet.Books);
             comboBox1.Items.Add("Arabic");
             comboBox1.Items.Add("English");     
         }
@@ -42,9 +44,6 @@ namespace BookRequests.Desktop
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+     
     }
 }

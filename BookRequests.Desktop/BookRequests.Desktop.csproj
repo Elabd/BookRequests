@@ -75,6 +75,21 @@
     <Compile Include="AddStudent.Designer.cs">
       <DependentUpon>AddStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="BookDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BookDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookDBDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BookDBDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookDBDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202001110549506_InitialCreate.cs" />
     <Compile Include="Migrations\202001110549506_InitialCreate.designer.cs">
       <DependentUpon>202001110549506_InitialCreate.cs</DependentUpon>
@@ -125,6 +140,39 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="BookDBDataSet.xsc">
+      <DependentUpon>BookDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BookDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BookDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BookDBDataSet.xss">
+      <DependentUpon>BookDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BookDBDataSet1.xsc">
+      <DependentUpon>BookDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BookDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BookDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BookDBDataSet1.xss">
+      <DependentUpon>BookDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BookDBDataSet2.xsc">
+      <DependentUpon>BookDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="BookDBDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BookDBDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BookDBDataSet2.xss">
+      <DependentUpon>BookDBDataSet2.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
