@@ -90,6 +90,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BookDBDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Dtos\DtoRequest.cs" />
+    <Compile Include="GridTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GridTest.designer.cs">
+      <DependentUpon>GridTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202001110549506_InitialCreate.cs" />
     <Compile Include="Migrations\202001110549506_InitialCreate.designer.cs">
       <DependentUpon>202001110549506_InitialCreate.cs</DependentUpon>
@@ -112,6 +125,12 @@
     <Compile Include="Enums\RequestType.cs" />
     <Compile Include="Enums\Status.cs" />
     <Compile Include="Models\Student.cs" />
+    <Compile Include="RequestAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RequestAdd.designer.cs">
+      <DependentUpon>RequestAdd.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddBook.resx">
       <DependentUpon>AddBook.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +139,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddStudent.resx">
       <DependentUpon>AddStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridTest.resx">
+      <DependentUpon>GridTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001110549506_InitialCreate.resx">
       <DependentUpon>202001110549506_InitialCreate.cs</DependentUpon>
@@ -140,6 +165,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RequestAdd.resx">
+      <DependentUpon>RequestAdd.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="BookDBDataSet.xsc">
       <DependentUpon>BookDBDataSet.xsd</DependentUpon>
     </None>

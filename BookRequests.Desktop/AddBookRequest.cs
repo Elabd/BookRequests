@@ -27,16 +27,16 @@ namespace BookRequests.Desktop
             this.studentsTableAdapter.Fill(this.bookDBDataSet2.Students);
             // TODO: This line of code loads data into the 'bookDBDataSet.Books' table. You can move, or remove it, as needed.
             this.booksTableAdapter.Fill(this.bookDBDataSet.Books);
-            Status.Items.Add(Enums.Status.Done);
-            Status.Items.Add(Enums.Status.Cancel);
-            Status.Items.Add(Enums.Status.Waiting);
+            comboBoxStatus.Items.Add(Enums.Status.Done);
+            comboBoxStatus.Items.Add(Enums.Status.Cancel);
+            comboBoxStatus.Items.Add(Enums.Status.Waiting);
 
-            priorty.Items.Add(Priority.High);
-            priorty.Items.Add(Priority.Low);
+            comboBoxPriorties.Items.Add(Priority.High);
+            comboBoxPriorties.Items.Add(Priority.Low);
 
 
-            requestType.Items.Add(RequestType.Pdf);
-            requestType.Items.Add(RequestType.Word);
+            comboBoxrequestTypes.Items.Add(RequestType.Pdf);
+            comboBoxrequestTypes.Items.Add(RequestType.Word);
 
             var books = ctx.Books.ToList();
         }
@@ -48,12 +48,12 @@ namespace BookRequests.Desktop
             BookRequest bookRequest = new BookRequest();
             Student student = new Student();
             Book book = new Book();
-            book = ctx.Books.FirstOrDefault(b=>b.Id==Book.SelectedIndex);
-            student = ctx.Students.FirstOrDefault(s => s.Id == Student.SelectedIndex);
+            book = ctx.Books.FirstOrDefault(b=>b.Id==comboBoxBooks.SelectedIndex);
+            student = ctx.Students.FirstOrDefault(s => s.Id == comboBoxStudents.SelectedIndex);
             bookRequest.Note = Note.Text;
-            bookRequest.Priority = (Priority)Enum.Parse(typeof(Priority), priorty.SelectedItem.ToString());
-            bookRequest.Status = (Status)Enum.Parse(typeof(Status), Status.SelectedItem.ToString());
-            bookRequest.RequestType = (RequestType)Enum.Parse(typeof(RequestType), requestType.SelectedItem.ToString());
+            bookRequest.Priority = (Priority)Enum.Parse(typeof(Priority), comboBoxPriorties.SelectedItem.ToString());
+            bookRequest.Status = (Status)Enum.Parse(typeof(Status), comboBoxStatus.SelectedItem.ToString());
+            bookRequest.RequestType = (RequestType)Enum.Parse(typeof(RequestType), comboBoxrequestTypes.SelectedItem.ToString());
             bookRequest.RequestDate = requestdate.Value;
             bookRequest.StimateDate = stimateDate.Value;
             bookRequest.Student = student;
@@ -62,6 +62,22 @@ namespace BookRequests.Desktop
             bookRequest.DateOfPrint = printDate.Value;
             ctx.BookRequests.Add(bookRequest);
             ctx.SaveChanges();
+            UpdateForm();
+        }
+
+        private void UpdateForm()
+        {
+
+            GridTest obj = new GridTest();
+            obj.Show();
+            this.Hide();
+            //this.Close();
+            //var th = new AddBookRequest();
+            //th.Show();
+            ////comboBoxStudents.ResetText();
+            ////Note.Text = string.Empty;
+
+            //Other updates
         }
     }
 }

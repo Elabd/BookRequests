@@ -43,27 +43,27 @@
             this.printDate = new System.Windows.Forms.DateTimePicker();
             this.stimateDate = new System.Windows.Forms.DateTimePicker();
             this.arrivedDate = new System.Windows.Forms.DateTimePicker();
-            this.Student = new System.Windows.Forms.ComboBox();
+            this.comboBoxStudents = new System.Windows.Forms.ComboBox();
+            this.studentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bookDBDataSet2 = new BookRequests.Desktop.BookDBDataSet2();
             this.bookDBDataSet = new BookRequests.Desktop.BookDBDataSet();
-            this.Book = new System.Windows.Forms.ComboBox();
+            this.comboBoxBooks = new System.Windows.Forms.ComboBox();
             this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bookDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.requestType = new System.Windows.Forms.ComboBox();
-            this.priorty = new System.Windows.Forms.ComboBox();
+            this.comboBoxrequestTypes = new System.Windows.Forms.ComboBox();
+            this.comboBoxPriorties = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.Status = new System.Windows.Forms.ComboBox();
+            this.comboBoxStatus = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.booksTableAdapter = new BookRequests.Desktop.BookDBDataSetTableAdapters.BooksTableAdapter();
-            this.bookDBDataSet2 = new BookRequests.Desktop.BookDBDataSet2();
-            this.studentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.studentsTableAdapter = new BookRequests.Desktop.BookDBDataSet2TableAdapters.StudentsTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookDBDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookDBDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bookDBDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -180,32 +180,42 @@
             this.arrivedDate.Size = new System.Drawing.Size(200, 20);
             this.arrivedDate.TabIndex = 15;
             // 
-            // Student
+            // comboBoxStudents
             // 
-            this.Student.DataSource = this.studentsBindingSource;
-            this.Student.DisplayMember = "StudentName";
-            this.Student.FormattingEnabled = true;
-            this.Student.Location = new System.Drawing.Point(434, 38);
-            this.Student.Name = "Student";
-            this.Student.Size = new System.Drawing.Size(121, 21);
-            this.Student.TabIndex = 16;
-            this.Student.ValueMember = "Id";
+            this.comboBoxStudents.DataSource = this.studentsBindingSource;
+            this.comboBoxStudents.DisplayMember = "StudentName";
+            this.comboBoxStudents.FormattingEnabled = true;
+            this.comboBoxStudents.Location = new System.Drawing.Point(434, 38);
+            this.comboBoxStudents.Name = "comboBoxStudents";
+            this.comboBoxStudents.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxStudents.TabIndex = 16;
+            this.comboBoxStudents.ValueMember = "Id";
+            // 
+            // studentsBindingSource
+            // 
+            this.studentsBindingSource.DataMember = "Students";
+            this.studentsBindingSource.DataSource = this.bookDBDataSet2;
+            // 
+            // bookDBDataSet2
+            // 
+            this.bookDBDataSet2.DataSetName = "BookDBDataSet2";
+            this.bookDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bookDBDataSet
             // 
             this.bookDBDataSet.DataSetName = "BookDBDataSet";
             this.bookDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // Book
+            // comboBoxBooks
             // 
-            this.Book.DataSource = this.booksBindingSource;
-            this.Book.DisplayMember = "BookName";
-            this.Book.FormattingEnabled = true;
-            this.Book.Location = new System.Drawing.Point(434, 65);
-            this.Book.Name = "Book";
-            this.Book.Size = new System.Drawing.Size(121, 21);
-            this.Book.TabIndex = 17;
-            this.Book.ValueMember = "Id";
+            this.comboBoxBooks.DataSource = this.booksBindingSource;
+            this.comboBoxBooks.DisplayMember = "BookName";
+            this.comboBoxBooks.FormattingEnabled = true;
+            this.comboBoxBooks.Location = new System.Drawing.Point(434, 65);
+            this.comboBoxBooks.Name = "comboBoxBooks";
+            this.comboBoxBooks.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxBooks.TabIndex = 17;
+            this.comboBoxBooks.ValueMember = "Id";
             // 
             // booksBindingSource
             // 
@@ -217,21 +227,21 @@
             this.bookDBDataSetBindingSource.DataSource = this.bookDBDataSet;
             this.bookDBDataSetBindingSource.Position = 0;
             // 
-            // requestType
+            // comboBoxrequestTypes
             // 
-            this.requestType.FormattingEnabled = true;
-            this.requestType.Location = new System.Drawing.Point(434, 283);
-            this.requestType.Name = "requestType";
-            this.requestType.Size = new System.Drawing.Size(121, 21);
-            this.requestType.TabIndex = 18;
+            this.comboBoxrequestTypes.FormattingEnabled = true;
+            this.comboBoxrequestTypes.Location = new System.Drawing.Point(434, 283);
+            this.comboBoxrequestTypes.Name = "comboBoxrequestTypes";
+            this.comboBoxrequestTypes.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxrequestTypes.TabIndex = 18;
             // 
-            // priorty
+            // comboBoxPriorties
             // 
-            this.priorty.FormattingEnabled = true;
-            this.priorty.Location = new System.Drawing.Point(434, 310);
-            this.priorty.Name = "priorty";
-            this.priorty.Size = new System.Drawing.Size(121, 21);
-            this.priorty.TabIndex = 19;
+            this.comboBoxPriorties.FormattingEnabled = true;
+            this.comboBoxPriorties.Location = new System.Drawing.Point(434, 310);
+            this.comboBoxPriorties.Name = "comboBoxPriorties";
+            this.comboBoxPriorties.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxPriorties.TabIndex = 19;
             // 
             // label9
             // 
@@ -251,13 +261,13 @@
             this.label10.TabIndex = 21;
             this.label10.Text = "Priority";
             // 
-            // Status
+            // comboBoxStatus
             // 
-            this.Status.FormattingEnabled = true;
-            this.Status.Location = new System.Drawing.Point(434, 343);
-            this.Status.Name = "Status";
-            this.Status.Size = new System.Drawing.Size(121, 21);
-            this.Status.TabIndex = 22;
+            this.comboBoxStatus.FormattingEnabled = true;
+            this.comboBoxStatus.Location = new System.Drawing.Point(434, 343);
+            this.comboBoxStatus.Name = "comboBoxStatus";
+            this.comboBoxStatus.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxStatus.TabIndex = 22;
             // 
             // label11
             // 
@@ -282,16 +292,6 @@
             // 
             this.booksTableAdapter.ClearBeforeFill = true;
             // 
-            // bookDBDataSet2
-            // 
-            this.bookDBDataSet2.DataSetName = "BookDBDataSet2";
-            this.bookDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // studentsBindingSource
-            // 
-            this.studentsBindingSource.DataMember = "Students";
-            this.studentsBindingSource.DataSource = this.bookDBDataSet2;
-            // 
             // studentsTableAdapter
             // 
             this.studentsTableAdapter.ClearBeforeFill = true;
@@ -303,13 +303,13 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.Status);
+            this.Controls.Add(this.comboBoxStatus);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.priorty);
-            this.Controls.Add(this.requestType);
-            this.Controls.Add(this.Book);
-            this.Controls.Add(this.Student);
+            this.Controls.Add(this.comboBoxPriorties);
+            this.Controls.Add(this.comboBoxrequestTypes);
+            this.Controls.Add(this.comboBoxBooks);
+            this.Controls.Add(this.comboBoxStudents);
             this.Controls.Add(this.arrivedDate);
             this.Controls.Add(this.stimateDate);
             this.Controls.Add(this.printDate);
@@ -327,11 +327,11 @@
             this.Name = "AddBookRequest";
             this.Text = "AddBookRequest";
             this.Load += new System.EventHandler(this.AddBookRequest_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookDBDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookDBDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bookDBDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,13 +352,13 @@
         private System.Windows.Forms.DateTimePicker printDate;
         private System.Windows.Forms.DateTimePicker stimateDate;
         private System.Windows.Forms.DateTimePicker arrivedDate;
-        private System.Windows.Forms.ComboBox Student;
-        private System.Windows.Forms.ComboBox Book;
-        private System.Windows.Forms.ComboBox requestType;
-        private System.Windows.Forms.ComboBox priorty;
+        private System.Windows.Forms.ComboBox comboBoxStudents;
+        private System.Windows.Forms.ComboBox comboBoxBooks;
+        private System.Windows.Forms.ComboBox comboBoxrequestTypes;
+        private System.Windows.Forms.ComboBox comboBoxPriorties;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox Status;
+        private System.Windows.Forms.ComboBox comboBoxStatus;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.BindingSource bookDBDataSetBindingSource;
